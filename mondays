@@ -1,0 +1,18 @@
+from datetime import date, timedelta
+
+def count_mondays(year):
+    start_date = date(year, 1, 1)
+    end_date = date(year, 12, 31)
+    mondays = 0
+    
+    current_date = start_date
+    
+    while current_date <= end_date:
+        if current_date.weekday() == 0:  # 0 represents Monday
+            mondays += 1
+        
+        current_date += timedelta(days=1)
+    
+    return mondays
+
+print(count_mondays(2025))
